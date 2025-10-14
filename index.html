@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kelime Notları — Hızlı Sözlük</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Kelime Notları</h1>
+    <p class="sub">Cümle ekle, kaydet; üstte aratınca sadece <em>o kelimeyi içeren</em> cümleler kalsın. Eşleşen kelime vurgulanır.</p>
+  </header>
+
+  <main class="container grid">
+    
+    <!-- Ekleme Formu -->
+    <section class="card">
+      <div class="grid grid-2">
+        <div>
+          <label for="word">Kelime (opsiyonel ama faydalı):</label>
+          <input id="word" type="text" placeholder="ör. consciousness" />
+        </div>
+        <div>
+          <label for="meaning">Açıklama / Anlam (isteğe bağlı):</label>
+          <input id="meaning" type="text" placeholder="ör. bilinç; farkındalık" />
+        </div>
+      </div>
+      <div style="margin-top:12px">
+        <label for="sentence">Cümle (zorunlu):</label>
+        <textarea id="sentence" placeholder="İngilizce cümleyi buraya yaz..."></textarea>
+      </div>
+      <div class="bar">
+        <button class="btn" id="saveBtn">Kaydet</button>
+        <span class="hint">Sıralama: kısa → uzun; eşit uzunlukta alfabetik.</span>
+      </div>
+    </section>
+
+
+    <!-- Arama Çubuğu -->
+    <section class="card">
+      <label for="search">Arama (cümle içinde geçen kelime):</label>
+      <input id="search" type="text" placeholder="ör. mind, quantum, thought..." autocomplete="off" />
+      <div class="bar">
+        <span class="hint">Aramayı temizleyince liste eski haline döner.</span>
+        <span class="count" id="count"></span>
+      </div>
+    </section>
+    
+    <!-- Liste -->
+    <section class="card">
+      <div id="list" class="list"></div>
+      <div id="empty" class="empty" style="display:none">Henüz bir cümle eklemedin.</div>
+    </section>
+  </main>
+
+  <footer class="container">© 2025 • Basit kişisel sözlük — veriler tarayıcında saklanır.</footer>
+
+  <script src="index.js" defer></script>
+</body>
+</html>
